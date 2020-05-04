@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
-export default () => (
+export const Home: React.FC = () => (
 	<div>
-		//@ts-ignore
 		<Container>
 			<h1>Next.js + TS + Styled Components</h1>
 		</Container>
 	</div>
 );
 
-const Container: Object = styled.section`
+const Container = styled.section`
 	padding: 2rem;
 `;
+
+export default Home;

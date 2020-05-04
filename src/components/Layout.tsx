@@ -1,8 +1,6 @@
-import { FunctionComponent } from 'react';
-
 import Nav from './Nav';
 
-const Layout: FunctionComponent = ({ children }) => {
+const Layout: React.FC = ({ children }) => {
 	return (
 		<>
 			{children}

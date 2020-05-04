@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-export default function Nav() {
+const Nav: React.FC = () => {
 	return (
 		<StyledNav>
 			<Link href="/">
@@ -18,7 +18,7 @@ export default function Nav() {
 			</Link>
 		</StyledNav>
 	);
-}
+};
 
 const StyledNav = styled.nav`
 	position: fixed;
@@ -58,3 +58,5 @@ const NavLink = styled.a`
 		background-color: rgba(255, 255, 255, 0.12);
 	}
 `;
+
+export default Nav;
