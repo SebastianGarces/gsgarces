@@ -1,11 +1,16 @@
 import NavLink from './NavLink'
+import styled from 'styled-components'
 
 export default () => {
 	return (
-		<header>
+		<Header>
 			<nav>
 				<NavLink href="/projects">Projects</NavLink>
 			</nav>
-		</header>
+		</Header>
 	)
 }
+
+const Header = styled.header`
+	border: 2px solid red;
+`

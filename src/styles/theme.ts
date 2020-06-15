@@ -1,8 +1,29 @@
-const theme = {
+export type Color = {
+	primary?: string
+	darker?: string
+	lighter?: string
+	border?: string
+}
+
+export type ColorPallete = {
+	main: Color
+	bg: Color
+	text: Color
+}
+
+export type Theme = {
+	colors: ColorPallete
+}
+
+const theme: Theme = {
 	colors: {
-		primary: '#1CF68D',
+		main: {
+			primary: '#1CF68D',
+		},
 		bg: {
-			primary: '#080808',
+			primary: '#333333',
+			darker: '#080808',
+			border: 'rgba(247, 247, 247, 0.4)',
 		},
 		text: {
 			primary: '#F7F7F7',
