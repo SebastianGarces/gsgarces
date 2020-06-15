@@ -10,6 +10,8 @@ export const Home: React.FC = () => (
 
 const Container = styled.section`
 	padding: 2rem;
+	border: 2px solid white;
+	height: 100%;
 `;
 
 export default Home;
