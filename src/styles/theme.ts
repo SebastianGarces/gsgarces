@@ -21,7 +21,7 @@ const theme: Theme = {
 			primary: '#1CF68D',
 		},
 		bg: {
-			primary: '#333333',
+			primary: '#131313',
 			darker: '#080808',
 			border: 'rgba(247, 247, 247, 0.4)',
 		},
