@@ -15,6 +15,7 @@ const NavLink = ({ href, children }) => {
 }
 
 const ATag = styled.a`
+	display: block;
 	${({ isActive }) =>
 		isActive &&
 		css`

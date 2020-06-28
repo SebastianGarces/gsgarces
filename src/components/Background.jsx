@@ -3,7 +3,7 @@ import colors from '../utils/colors'
 import { motion } from 'framer-motion'
 
 export default () => {
-	const variant = {
+	const image = {
 		initial: {
 			scale: 1.5,
 			y: 400,
@@ -20,7 +20,7 @@ export default () => {
 	return (
 		<BackgroundGrid>
 			<PrimaryImageContainer>
-				<PrimaryImage variants={variant} initial="initial" animate="animate" />
+				<PrimaryImage variants={image} initial="initial" animate="animate" />
 			</PrimaryImageContainer>
 			<DarkGray />
 			<DarkGray2 />
@@ -31,7 +31,7 @@ export default () => {
 				<LineLeft />
 			</LeftLineContainer>
 			<SecondaryImageContainer>
-				<SecondaryImage variants={variant} initial="initial" animate="animate" />
+				<SecondaryImage variants={image} initial="initial" animate="animate" />
 			</SecondaryImageContainer>
 		</BackgroundGrid>
 	)
@@ -54,6 +54,14 @@ const BackgroundGrid = styled.div`
 		'pimage pimage dgray  simage dgray2 dgray3'
 		'pimage pimage ...... simage dgray2 dgray3'
 		'...... linec  ...... simage dgray2 dgray3';
+
+	@media (max-width: 768px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: 6fr 2fr;
+		grid-template-areas:
+			'pimage'
+			'......';
+	}
 `
 
 const PrimaryImageContainer = styled.div`

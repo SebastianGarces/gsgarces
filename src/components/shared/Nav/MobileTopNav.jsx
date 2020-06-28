@@ -5,9 +5,9 @@ export default () => {
 	return (
 		<Header>
 			<NavContainer>
-				<Nav>
-					<NavLink href="/projects">Projects</NavLink>
-				</Nav>
+				<TopNav>
+					<NavLink href="/projects">X</NavLink>
+				</TopNav>
 			</NavContainer>
 		</Header>
 	)
@@ -15,28 +15,22 @@ export default () => {
 
 const Header = styled.header`
 	border: 2px solid white;
-	display: grid;
-	grid-template-columns: 1fr 2.5fr 2fr 3fr 1fr 1fr;
-	grid-template-areas: '... nav nav nav nav ...';
-	grid-area: nav;
+	display: none;
+	grid-area: top-nav;
 
 	@media (max-width: 768px) {
-		grid-template-columns: 1fr;
-		grid-template-areas: 'nav';
+		display: grid;
+		grid-template-columns: 20px 1fr 20px;
+		grid-template-areas: '... nav ...';
 	}
 `
 
-const Nav = styled.nav`
+const TopNav = styled.nav`
 	border: 2px solid white;
 	padding: 1rem 0;
 	width: 100%;
 	display: flex;
 	align-items: center;
-
-	@media (max-width: 768px) {
-		height: 100%;
-		padding: 0;
-	}
 `
 
 const NavContainer = styled.div`
