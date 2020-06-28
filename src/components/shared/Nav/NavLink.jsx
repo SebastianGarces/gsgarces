@@ -1,12 +1,11 @@
 import Link from 'next/link'
-import { NavLinkObj, ATagProps } from '../../../@types/nav'
 import { useRouter } from 'next/dist/client/router'
 import styled, { css } from 'styled-components'
 import colors from '../../../utils/colors'
 
-const NavLink = ({ href, children }: NavLinkObj) => {
+const NavLink = ({ href, children }) => {
 	const router = useRouter()
-	const isActive: boolean = router.pathname === href
+	const isActive = router.pathname === href
 
 	return (
 		<Link href={href}>
@@ -15,11 +14,11 @@ const NavLink = ({ href, children }: NavLinkObj) => {
 	)
 }
 
-const ATag = styled.a<ATagProps>`
+const ATag = styled.a`
 	${({ isActive }) =>
 		isActive &&
 		css`
-			color: ${colors('main.primary')};
+			color: ${colors('primary')};
 		`}
 `
 

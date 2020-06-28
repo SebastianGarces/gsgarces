@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Home: React.FC = () => (
+export const Home = () => (
 	<div>
 		<Container>
 			<h1>Next.js + TS + Styled Components</h1>
