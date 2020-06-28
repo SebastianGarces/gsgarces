@@ -8,7 +8,7 @@
 		"deploy": "next build && next export && vercel --prod"
 	},
 	"dependencies": {
-		"framer-motion": "^2.0.0-beta.73",
+		"framer-motion": "^2.0.0-beta.77",
 		"next": "^9.4.4",
 		"react": "^16.12.0",
 		"react-dom": "^16.12.0",

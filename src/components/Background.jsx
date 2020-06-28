@@ -1,10 +1,27 @@
 import styled from 'styled-components'
 import colors from '../utils/colors'
+import { motion } from 'framer-motion'
 
 export default () => {
+	const variant = {
+		initial: {
+			scale: 1.5,
+			y: 400,
+		},
+		animate: {
+			scale: 1,
+			y: 0,
+			transition: {
+				duration: 0.5,
+			},
+		},
+	}
+
 	return (
 		<BackgroundGrid>
-			<PrimaryImage />
+			<PrimaryImageContainer>
+				<PrimaryImage variants={variant} initial="initial" animate="animate" />
+			</PrimaryImageContainer>
 			<DarkGray />
 			<DarkGray2 />
 			<DarkGray3>
@@ -13,7 +30,9 @@ export default () => {
 			<LeftLineContainer>
 				<LineLeft />
 			</LeftLineContainer>
-			<SecondaryImage />
+			<SecondaryImageContainer>
+				<SecondaryImage variants={variant} initial="initial" animate="animate" />
+			</SecondaryImageContainer>
 		</BackgroundGrid>
 	)
 }
@@ -37,24 +56,36 @@ const BackgroundGrid = styled.div`
 		'...... linec  ...... simage dgray2 dgray3';
 `
 
-const PrimaryImage = styled.div`
+const PrimaryImageContainer = styled.div`
 	grid-area: pimage;
+	position: relative;
+	overflow: hidden;
+	border-bottom: 1px solid ${colors('bg.border')};
+	border-right: 1px solid ${colors('bg.border')};
+`
+
+const PrimaryImage = styled(motion.div)`
+	width: 100%;
+	height: 100%;
 	background-image: url('/liquid-dark.jpg');
 	background-size: cover;
 	background-position: center;
-	border-bottom: 1px solid ${colors('bg.border')};
-	border-right: 1px solid ${colors('bg.border')};
-	position: relative;
 `
 
-const SecondaryImage = styled.div`
+const SecondaryImageContainer = styled.div`
 	grid-area: simage;
+	overflow: hidden;
+	border-left: 1px solid ${colors('bg.border')};
+	border-right: 1px solid ${colors('bg.border')};
+`
+
+const SecondaryImage = styled(motion.div)`
+	width: 100%;
+	height: 100%;
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
 		url('/liquid-light.jpg');
 	background-size: cover;
 	background-position: center;
-	border-left: 1px solid ${colors('bg.border')};
-	border-right: 1px solid ${colors('bg.border')};
 `
 
 const DarkGray = styled.div`
