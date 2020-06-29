@@ -5,12 +5,12 @@ import { motion } from 'framer-motion'
 export default () => {
 	const image = {
 		initial: {
+			opacity: 0,
 			scale: 1.5,
-			y: 400,
 		},
 		animate: {
 			scale: 1,
-			y: 0,
+			opacity: 1,
 			transition: {
 				duration: 0.5,
 			},
@@ -55,6 +55,15 @@ const BackgroundGrid = styled.div`
 		'pimage pimage ...... simage dgray2 dgray3'
 		'...... linec  ...... simage dgray2 dgray3';
 
+	@media (max-width: 1024px) {
+		background-color: ${colors('bg.darker')};
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: 6fr 2fr;
+		grid-template-areas:
+			'pimage simage'
+			'...... ......';
+	}
+
 	@media (max-width: 768px) {
 		grid-template-columns: 1fr;
 		grid-template-rows: 6fr 2fr;
@@ -85,6 +94,11 @@ const SecondaryImageContainer = styled.div`
 	overflow: hidden;
 	border-left: 1px solid ${colors('bg.border')};
 	border-right: 1px solid ${colors('bg.border')};
+
+	@media (max-width: 1024px) {
+		border: none;
+		border-bottom: 1px solid ${colors('bg.border')};
+	}
 `
 
 const SecondaryImage = styled(motion.div)`

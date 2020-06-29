@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 import colors from '../../utils/colors'
 
-import Nav from './Nav/Nav'
-import MobileTopNav from './Nav/MobileTopNav'
+import Nav from './Nav/TopNav'
+import MobileTopNav from './Nav/BottomNav'
 import Background from '../Background'
 
 const Layout = ({ children }) => {
@@ -25,15 +25,15 @@ const Container = styled.div`
 	display: grid;
 	grid-template-rows: 150px 1fr;
 	grid-template-areas:
-		'nav'
+		'top-nav'
 		'...';
 
-	@media (max-width: 768px) {
-		grid-template-rows: 90px 1fr 80px;
+	@media (max-width: 1024px) {
+		grid-template-rows: 90px 1fr 90px;
 		grid-template-areas:
 			'top-nav'
-			'...'
-			'nav';
+			'.......'
+			'bot-nav';
 	}
 `
 
