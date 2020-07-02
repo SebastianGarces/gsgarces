@@ -14,7 +14,6 @@ export default () => {
 }
 
 const Footer = styled.footer`
-	border: 2px solid white;
 	display: none;
 	grid-area: bot-nav;
 
@@ -26,7 +25,6 @@ const Footer = styled.footer`
 `
 
 const TopNav = styled.nav`
-	border: 2px solid white;
 	padding: 1rem 0;
 	width: 100%;
 	display: flex;
