@@ -23,6 +23,8 @@ const Container = styled.div`
 	overflow: hidden;
 	color: ${colors('primary')};
 	display: grid;
+	justify-content: center;
+
 	grid-template-rows: 150px 1fr;
 	grid-template-areas:
 		'top-nav'

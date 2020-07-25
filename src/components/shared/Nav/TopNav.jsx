@@ -18,6 +18,7 @@ const Header = styled.header`
 	grid-template-columns: 1fr 2.5fr 2fr 3fr 1fr 1fr;
 	grid-template-areas: '... nav nav nav nav ...';
 	grid-area: top-nav;
+	width: min(2660px, 95vw);
 
 	@media (max-width: 1024px) {
 		grid-template-columns: 1rem 2.5fr 2fr 3fr 1fr 1rem;

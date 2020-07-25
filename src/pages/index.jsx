@@ -35,28 +35,28 @@ const ContentContainer = styled.div`
 	flex-direction: column;
 	width: 100%;
 	margin: 0 auto;
-	border: 1px solid red;
 `
 const HeadingContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
+	align-items: flex-start;
 	width: fit-content;
 	margin-top: 3rem;
-
-	border: 1px solid white;
 `
 
 const Heading = styled(motion.h1)`
-	font-family: Roboto;
 	font-size: clamp(86px, 5vw, 144px);
-	font-weight: 700;
 	color: ${colors('text.primary')};
+	font-family: proxima-nova, sans-serif;
+	font-weight: 700;
+	font-style: normal;
 `
 
-const SubHeading = styled(motion.h3)`
-	font-family: 'Playfair Display', serif;
-	font-weight: 300;
+const SubHeading = styled(motion.h2)`
+	font-family: proxima-nova, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-weight: 600;
 	font-size: 2.75vw;
 	color: ${colors('text.darker')};
 

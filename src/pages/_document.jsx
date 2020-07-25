@@ -29,11 +29,16 @@ class MyDocument extends Document {
 
 	render() {
 		return (
-			<Html>
+			<Html lang="en">
 				<Head>
-					<link
-						href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Roboto:wght@400;500;700&display=swap"
+					{/* <link
 						rel="stylesheet"
+						href="https://use.typekit.net/yfx5kpz.css"
+						defer
+					/> */}
+					<meta
+						name="Description"
+						content="G. Sebastian Garces - Front End Developer. Bridging the gap between developers and designers."
 					/>
 				</Head>
 				<body>
