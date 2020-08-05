@@ -27,5 +27,8 @@
 		"webp-loader": "^0.6.0"
 	},
 	"devDependencies": {},
-	"license": "MIT"
+	"license": "MIT",
+	"peerDependencies": {
+		"url-regex": "^5.0.0"
+	}
 }
