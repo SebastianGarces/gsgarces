@@ -26,5 +26,6 @@
 		"svg-sprite-loader": "^5.0.0",
 		"webp-loader": "^0.6.0"
 	},
-	"devDependencies": {}
+	"devDependencies": {},
+	"license": "MIT"
 }
