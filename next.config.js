@@ -1,7 +1,5 @@
-const withOptimizedImages = require('next-optimized-images')
-
-module.exports = withOptimizedImages({
+module.exports = {
 	devIndicators: {
 		autoPrerender: false,
 	},
-})
+}
