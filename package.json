@@ -28,7 +28,5 @@
 	},
 	"devDependencies": {},
 	"license": "MIT",
-	"peerDependencies": {
-		"url-regex": "^5.0.0"
-	}
+	"peerDependencies": {}
 }
