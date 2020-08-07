@@ -1,14 +1,19 @@
 const theme = {
 	colors: {
-		primary: '#FE6D6D',
+		main: {
+			primary: '#364AFD',
+			hover: '#031CFC',
+			light: '#CDD2FE',
+		},
 		bg: {
-			primary: '#131313',
-			darker: '#080808',
+			primary: '#F9F9F9',
+			dark: '#111111',
 			border: 'rgba(247, 247, 247, 0.4)',
 		},
 		text: {
-			primary: '#F7F7F7',
-			darker: '#F4F4F4',
+			primary: '#222',
+			white: '#F9F9F9',
+			diff: '#FFF',
 		},
 	},
 }

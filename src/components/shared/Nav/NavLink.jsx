@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { useRouter } from 'next/dist/client/router'
+import { useRouter } from 'next/router'
 import styled, { css } from 'styled-components'
 import colors from '../../../utils/colors'
 
-const NavLink = ({ href, children }) => {
+export const NavLink = ({ href, children }) => {
 	const router = useRouter()
 	const isActive = router.pathname === href
 
@@ -19,8 +19,6 @@ const ATag = styled.a`
 	${({ isActive }) =>
 		isActive &&
 		css`
-			color: ${colors('primary')};
+			color: ${colors('main.primary')};
 		`}
 `
-
-export default NavLink

@@ -31,11 +31,7 @@ class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
-					{/* <link
-						rel="stylesheet"
-						href="https://use.typekit.net/yfx5kpz.css"
-						defer
-					/> */}
+					<link rel="stylesheet" href="https://use.typekit.net/yfx5kpz.css" />
 					<meta
 						name="Description"
 						content="G. Sebastian Garces - Front End Developer. Bridging the gap between developers and designers."

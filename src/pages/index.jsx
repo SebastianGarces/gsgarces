@@ -1,68 +1,117 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import colors from '../utils/colors'
+import { CircleGroup } from '../components/svg'
 
 export const Home = () => (
-	<div>
-		<Container>
-			<ContentContainer>
-				<HeadingContainer>
-					<Heading>Front End Developer</Heading>
+	<Container>
+		<ContentWrapper>
+			<Hero>
+				<HeadingWrapper>
+					<Heading>Front  End  Developer</Heading>
 					<SubHeading>
-						G<span>.</span> Sebastian Garces
+						G. Sebastian Garces
+						<Circles>
+							<CircleGroup />
+						</Circles>
 					</SubHeading>
-				</HeadingContainer>
-			</ContentContainer>
-		</Container>
-	</div>
+				</HeadingWrapper>
+			</Hero>
+			<AccentSquare>
+				<h2>Bridging the gap between developers and designers</h2>
+				<button>Projects</button>
+			</AccentSquare>
+		</ContentWrapper>
+	</Container>
 )
 
 const Container = styled.section`
 	height: 100%;
 	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 2.5fr 2fr 3fr 1fr 1fr;
-	grid-template-areas: '... content content content content ...';
-
-	@media (max-width: 1024px) {
-		grid-template-columns: 1rem 2.5fr 2fr 3fr 1fr 1rem;
-	}
+	display: flex;
+	align-items: center;
 `
 
-const ContentContainer = styled.div`
-	grid-area: content;
+const ContentWrapper = styled.div`
+	position: relative;
+	height: fit-content;
 	display: flex;
-	flex-direction: column;
 	width: 100%;
-	margin: 0 auto;
 `
-const HeadingContainer = styled.div`
+
+const Hero = styled.div`
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
 	width: fit-content;
-	margin-top: 3rem;
+	padding-top: 3.5vh;
+	width: 45%;
+	height: 70vh;
+`
+
+const HeadingWrapper = styled.div`
+	position: absolute;
+	width: max-content;
 `
 
 const Heading = styled(motion.h1)`
-	font-size: clamp(86px, 5vw, 144px);
-	color: ${colors('text.primary')};
-	font-family: proxima-nova, sans-serif;
-	font-weight: 700;
+	color: ${colors('text.diff')};
+	font-family: neue-haas-unica, sans-serif;
 	font-style: normal;
+	font-weight: 700;
+	font-size: clamp(64px, 5vw, 120px);
+	letter-spacing: -0.085em;
+	text-transform: uppercase;
+	mix-blend-mode: difference;
+	z-index: 5;
 `
 
 const SubHeading = styled(motion.h2)`
-	font-family: proxima-nova, sans-serif;
-	font-weight: 700;
+	position: relative;
+	width: fit-content;
+	font-family: neue-haas-unica, sans-serif;
 	font-style: normal;
-	font-weight: 600;
-	font-size: 2.75vw;
-	color: ${colors('text.darker')};
+	font-weight: 200;
+	font-size: clamp(36px, 3vw, 72px);
+	color: ${colors('text.primary')};
+`
 
-	span {
-		color: ${colors('primary')};
+const AccentSquare = styled.div`
+	width: 55%;
+	height: 70vh;
+	background: ${colors('bg.dark')};
+	border-radius: 20px;
+	padding: 4vw 5vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	h2 {
+		color: ${colors('text.white')};
+		font-size: clamp(22px, 2vw, 48px);
+		font-weight: 300;
+		margin-bottom: 3rem;
 	}
+
+	button {
+		background-color: ${colors('main.primary')};
+		width: fit-content;
+		padding: 1rem 4rem;
+		border: none;
+		border-radius: 5px;
+
+		color: ${colors('text.white')};
+		font-size: 20px;
+		font-weight: 500;
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+`
+
+const Circles = styled.div`
+	position: absolute;
+	right: 0;
+	top: 250%;
 `
 
 export default Home

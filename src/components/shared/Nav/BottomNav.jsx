@@ -1,7 +1,7 @@
-import NavLink from './NavLink'
+import { NavLink } from './NavLink'
 import styled from 'styled-components'
 
-export default () => {
+export const BottomNav = () => {
 	return (
 		<Footer>
 			<NavContainer>
