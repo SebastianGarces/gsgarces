@@ -12,7 +12,9 @@ const theme = {
 		},
 		text: {
 			primary: '#222',
+			primary_lighter: '#444',
 			white: '#F9F9F9',
+			white_light: '#CCCCCC',
 			diff: '#FFF',
 		},
 	},

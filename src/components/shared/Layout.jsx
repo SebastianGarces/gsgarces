@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 import colors from '../../utils/colors'
 
-import { TopNav, BottomNav } from './nav'
-import Background from '../Background'
+import { TopNav } from './TopNav'
+import { BottomNav } from './BottomNav'
 
 export const Layout = ({ children }) => {
 	return (
@@ -13,7 +13,6 @@ export const Layout = ({ children }) => {
 				<BottomNav />
 				{children}
 			</ContentWrapper>
-			<Background />
 		</Container>
 	)
 }
@@ -56,5 +55,17 @@ const ContentWrapper = styled.main`
 	@media (max-width: 768px) {
 		grid-column: 1/14;
 		padding: 15px;
+	}
+
+	@media (min-width: 1024px) {
+		grid-column: 2/13;
+	}
+
+	@media (min-width: 2600px) {
+		grid-column: 3/12;
+	}
+
+	@media (min-width: 3200px) {
+		grid-column: 4/11;
 	}
 `

@@ -8,7 +8,7 @@ export const Home = () => (
 		<ContentWrapper>
 			<Hero>
 				<HeadingWrapper>
-					<Heading>Front  End  Developer</Heading>
+					<Heading>Front End Developer</Heading>
 					<SubHeading>
 						G. Sebastian Garces
 						<Circles>
@@ -56,10 +56,8 @@ const HeadingWrapper = styled.div`
 
 const Heading = styled(motion.h1)`
 	color: ${colors('text.diff')};
-	font-family: neue-haas-unica, sans-serif;
-	font-style: normal;
-	font-weight: 700;
-	font-size: clamp(64px, 5vw, 120px);
+	font-weight: 800;
+	font-size: clamp(54px, 5vw, 120px);
 	letter-spacing: -0.085em;
 	text-transform: uppercase;
 	mix-blend-mode: difference;
@@ -69,10 +67,8 @@ const Heading = styled(motion.h1)`
 const SubHeading = styled(motion.h2)`
 	position: relative;
 	width: fit-content;
-	font-family: neue-haas-unica, sans-serif;
-	font-style: normal;
 	font-weight: 200;
-	font-size: clamp(36px, 3vw, 72px);
+	font-size: clamp(33px, 2.5vw, 48px);
 	color: ${colors('text.primary')};
 `
 
@@ -81,15 +77,15 @@ const AccentSquare = styled.div`
 	height: 70vh;
 	background: ${colors('bg.dark')};
 	border-radius: 20px;
-	padding: 4vw 5vw;
+	padding: 3vw 4vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 
 	h2 {
-		color: ${colors('text.white')};
-		font-size: clamp(22px, 2vw, 48px);
-		font-weight: 300;
+		color: ${colors('text.white_light')};
+		font-size: clamp(18px, 2vw, 48px);
+		font-weight: 400;
 		margin-bottom: 3rem;
 	}
 
@@ -100,18 +96,31 @@ const AccentSquare = styled.div`
 		border: none;
 		border-radius: 5px;
 
+		transition: background-color 150ms ease-in-out;
+
 		color: ${colors('text.white')};
 		font-size: 20px;
-		font-weight: 500;
+		font-weight: 600;
 		text-transform: uppercase;
 		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			background-color: ${colors('main.hover')};
+			outline: none;
+		}
 	}
 `
 
 const Circles = styled.div`
 	position: absolute;
 	right: 0;
-	top: 250%;
+	top: 300%;
+
+	svg {
+		width: clamp(200px, 15vw, 400px);
+		height: auto;
+	}
 `
 
 export default Home

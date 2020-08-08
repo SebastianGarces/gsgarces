@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled, { css } from 'styled-components'
-import colors from '../../../utils/colors'
+import colors from '../../utils/colors'
 
 export const NavLink = ({ href, children }) => {
 	const router = useRouter()

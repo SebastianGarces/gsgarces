@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import colors from '../utils/colors'
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -7,15 +8,20 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
 
         body {
+            background-color: ${colors('bg.primary')};
+            
             h1, h2, h3, h4, h5, h6 {
-                font-family: neue-haas-unica, sans-serif;
+                font-family: poppins, sans-serif;
                 font-weight: 700;
                 font-style: normal;
             }
             p, a, li, span, button {
-                font-family: neue-haas-unica, sans-serif;
+                font-family: poppins, sans-serif;
                 font-weight: 400;
                 font-style: normal;
+            }
+            a {
+        		cursor: pointer;
             }
         }
     }

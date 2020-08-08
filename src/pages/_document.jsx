@@ -31,7 +31,11 @@ class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
-					<link rel="stylesheet" href="https://use.typekit.net/yfx5kpz.css" />
+					<link
+						href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap"
+						rel="stylesheet"
+						defer
+					/>
 					<meta
 						name="Description"
 						content="G. Sebastian Garces - Front End Developer. Bridging the gap between developers and designers."
