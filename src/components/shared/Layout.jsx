@@ -18,16 +18,12 @@ export const Layout = ({ children }) => {
 }
 
 const Container = styled.div`
-	height: 100vh;
-	width: 100vw;
-	overflow: hidden;
+	min-height: 100vh;
 	color: ${colors('main.primary')};
 
 	display: grid;
 	grid-template-columns: repeat(13, 1fr);
 	grid-gap: 20px;
-
-	justify-content: center;
 
 	@media (max-width: 1024px) {
 		grid-gap: 0px;
@@ -43,22 +39,19 @@ const ContentWrapper = styled.main`
 		'top-nav'
 		'...';
 
-	@media (max-width: 1024px) {
+	@media (max-width: 2200px) {
 		grid-column: 2/13;
+		grid-template-rows: 90px 1fr 50px;
+	}
+
+	@media (max-width: 768px) {
+		grid-column: 1/14;
+		padding: 0 15px;
 		grid-template-rows: 90px 1fr 90px;
 		grid-template-areas:
 			'top-nav'
 			'.......'
 			'bot-nav';
-	}
-
-	@media (max-width: 835px) {
-		grid-column: 1/14;
-		padding: 0 30px;
-	}
-
-	@media (min-width: 1024px) {
-		grid-column: 2/13;
 	}
 
 	@media (min-width: 2600px) {

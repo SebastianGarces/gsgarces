@@ -51,7 +51,6 @@ export const TopNav = () => {
 				</Socials>
 				<Links>
 					<NavLink href="/about">About</NavLink>
-					<NavLink href="/experience">Experience</NavLink>
 					<NavLink href="/projects">Projects</NavLink>
 					<NavLink href="/keyframes">Keyframes</NavLink>
 					<NavLink href="/contact-me">Contact me</NavLink>
@@ -107,6 +106,10 @@ const Socials = styled.div`
 				}
 			}
 		}
+	}
+
+	@media (max-width: 768px) {
+		display: none;
 	}
 `
 
