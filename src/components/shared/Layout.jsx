@@ -52,9 +52,9 @@ const ContentWrapper = styled.main`
 			'bot-nav';
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 835px) {
 		grid-column: 1/14;
-		padding: 15px;
+		padding: 0 30px;
 	}
 
 	@media (min-width: 1024px) {

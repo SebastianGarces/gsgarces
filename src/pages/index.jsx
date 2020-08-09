@@ -57,7 +57,7 @@ const HeadingWrapper = styled.div`
 const Heading = styled(motion.h1)`
 	color: ${colors('text.diff')};
 	font-weight: 800;
-	font-size: clamp(54px, 5vw, 120px);
+	font-size: clamp(54px, 6.5vw, 120px);
 	letter-spacing: -0.085em;
 	text-transform: uppercase;
 	mix-blend-mode: difference;

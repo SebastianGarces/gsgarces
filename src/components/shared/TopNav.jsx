@@ -1,15 +1,17 @@
-import { NavLink } from './NavLink'
 import styled from 'styled-components'
-import { LogoMark, Github, Linkedin, Twitter, Dribbble } from '../svg'
 import Link from 'next/link'
+
 import colors from '../../utils/colors'
+
+import { NavLink } from './NavLink'
+import { LogoMark, Github, Linkedin, Twitter, Dribbble, HamburgerMenu } from '../svg'
 
 export const TopNav = () => {
 	return (
 		<Header>
 			<Nav>
 				<Link href="/">
-					<a className="logo">
+					<a className="logo" aria-label="Landing Page">
 						<LogoMark />
 					</a>
 				</Link>
@@ -17,19 +19,33 @@ export const TopNav = () => {
 					<IconWrapper
 						href="https://github.com/SebastianGarces"
 						target="_blank"
+						aria-label="Github Profile"
+						rel="noopener"
 					>
 						<Github />
 					</IconWrapper>
 					<IconWrapper
 						href="https://www.linkedin.com/in/gsebastiangarces/"
 						target="_blank"
+						aria-label="LinkedIn Profile"
+						rel="noopener"
 					>
 						<Linkedin />
 					</IconWrapper>
-					<IconWrapper href="https://twitter.com/gsgarces" target="_blank">
+					<IconWrapper
+						href="https://twitter.com/gsgarces"
+						target="_blank"
+						aria-label="Twitter Profile"
+						rel="noopener"
+					>
 						<Twitter />
 					</IconWrapper>
-					<IconWrapper href="https://dribbble.com/g_sebastian" target="_blank">
+					<IconWrapper
+						href="https://dribbble.com/g_sebastian"
+						target="_blank"
+						aria-label="Dribbble Profile"
+						rel="noopener"
+					>
 						<Dribbble />
 					</IconWrapper>
 				</Socials>
@@ -40,6 +56,9 @@ export const TopNav = () => {
 					<NavLink href="/keyframes">Keyframes</NavLink>
 					<NavLink href="/contact-me">Contact me</NavLink>
 				</Links>
+				<MenuIconWrapper>
+					<HamburgerMenu />
+				</MenuIconWrapper>
 			</Nav>
 		</Header>
 	)
@@ -50,7 +69,7 @@ const Header = styled.header`
 `
 
 const Nav = styled.nav`
-	padding: 25px 0;
+	padding: 35px 0;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -59,6 +78,10 @@ const Nav = styled.nav`
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	@media (max-width: 768px) {
+		padding: 25px 0;
 	}
 `
 
@@ -98,10 +121,23 @@ const Links = styled.div`
 		color: ${colors('text.primary_lighter')};
 		font-weight: 600;
 	}
+
+	@media (max-width: 1200px) {
+		display: none;
+	}
 `
 
 const IconWrapper = styled.a`
 	display: flex;
 	align-items: center;
 	margin-left: 2rem;
+`
+
+const MenuIconWrapper = styled.div`
+	margin-left: auto;
+	cursor: pointer;
+
+	@media (min-width: 1201px) {
+		display: none;
+	}
 `
