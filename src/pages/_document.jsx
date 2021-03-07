@@ -31,11 +31,7 @@ class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
-					<link
-						href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap"
-						rel="stylesheet"
-						defer
-					/>
+					<link href="/fonts/poppins.css" rel="stylesheet" async />
 					<meta
 						name="Description"
 						content="G. Sebastian Garces - Front End Developer. Bridging the gap between developers and designers."

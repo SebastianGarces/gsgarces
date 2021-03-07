@@ -1,29 +1,32 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import colors from '../utils/colors'
-import { CircleGroup } from '../components/svg'
+import { useRouter } from 'next/router'
 
-export const Home = () => (
-	<Container>
-		<ContentWrapper>
-			<Hero>
-				<HeadingWrapper>
-					<Heading>Front &nbsp; End &nbsp; Developer</Heading>
-					<SubHeading>
-						G. Sebastian Garces
-						<Circles>
-							<CircleGroup />
-						</Circles>
-					</SubHeading>
-				</HeadingWrapper>
-			</Hero>
-			<AccentSquare>
-				<h2>Bridging the gap between developers and designers</h2>
-				<button>Projects</button>
-			</AccentSquare>
-		</ContentWrapper>
-	</Container>
-)
+export default function HomePage() {
+	const router = useRouter()
+
+	function handleProjects() {
+		router.push('/projects')
+	}
+
+	return (
+		<Container>
+			<ContentWrapper>
+				<Hero>
+					<HeadingWrapper>
+						<Heading>Front &nbsp; End &nbsp; Developer</Heading>
+						<SubHeading>G. Sebastian Garces</SubHeading>
+					</HeadingWrapper>
+				</Hero>
+				<AccentSquare>
+					<h2>Bridging the gap between developers and designers</h2>
+					<button onClick={handleProjects}>Projects</button>
+				</AccentSquare>
+			</ContentWrapper>
+		</Container>
+	)
+}
 
 const Container = styled.section`
 	height: 100%;
@@ -78,12 +81,11 @@ const HeadingWrapper = styled.div`
 `
 
 const Heading = styled(motion.h1)`
-	color: ${colors('text.diff')};
+	color: ${colors('text.primary')};
 	font-weight: 800;
 	font-size: 120px;
 	letter-spacing: -0.085em;
 	text-transform: uppercase;
-	mix-blend-mode: difference;
 	z-index: 5;
 
 	@media (max-width: 1500px) {
@@ -166,22 +168,23 @@ const SubHeading = styled(motion.h2)`
 const AccentSquare = styled.div`
 	width: 55%;
 	height: 70vh;
-	background: ${colors('bg.dark')};
 	border-radius: 20px;
-	padding: 3vw 4vw;
+	padding: 3vw 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
+	align-items: flex-end;
 
 	@media (min-width: 3200px) {
 		padding: 2vw;
 	}
 
 	h2 {
-		color: ${colors('text.white_light')};
+		color: ${colors('text.primary_lighter')};
 		font-size: clamp(18px, 2vw, 38px);
 		font-weight: 200;
 		margin-bottom: 3rem;
+		text-align: end;
 	}
 
 	button {
@@ -211,11 +214,13 @@ const AccentSquare = styled.div`
 		height: min-content;
 		width: 100%;
 		padding: 0;
+		align-items: flex-start;
 
 		h2 {
 			color: ${colors('text.primary_lightest')};
 			font-size: clamp(18px, 3vw, 30px);
 			margin-bottom: 2rem;
+			text-align: start;
 		}
 
 		button {
@@ -223,20 +228,3 @@ const AccentSquare = styled.div`
 		}
 	}
 `
-
-const Circles = styled.div`
-	position: absolute;
-	right: 0;
-	top: 300%;
-
-	@media (max-width: 1024px) {
-		display: none;
-	}
-
-	svg {
-		width: clamp(200px, 25vw, 400px);
-		height: auto;
-	}
-`
-
-export default Home

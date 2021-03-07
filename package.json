@@ -3,14 +3,13 @@
 	"version": "1.0.0",
 	"scripts": {
 		"dev": "next",
-		"build": "next build && next export",
-		"start": "next start",
-		"deploy": "next build && next export && vercel --prod"
+		"build": "next build",
+		"start": "next start"
 	},
 	"dependencies": {
 		"babel-plugin-styled-components": "^1.10.7",
-		"framer-motion": "^2.6.5-beta.8",
-		"next": "^10.0.1",
+		"framer-motion": "^3.10.0",
+		"next": "^10.0.8",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
 		"styled-components": "^5.2.1"
