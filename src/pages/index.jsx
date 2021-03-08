@@ -87,6 +87,7 @@ const Heading = styled(motion.h1)`
 	letter-spacing: -0.085em;
 	text-transform: uppercase;
 	z-index: 5;
+	line-height: 1.25;
 
 	@media (max-width: 1500px) {
 		font-size: 98px;
@@ -132,12 +133,12 @@ const SubHeading = styled(motion.h2)`
 	position: relative;
 	width: fit-content;
 	font-weight: 200;
-	font-size: 48px;
+	font-size: 64px;
 
 	color: ${colors('text.primary')};
 
 	@media (max-width: 1500px) {
-		font-size: 48px;
+		font-size: 64px;
 	}
 
 	@media (max-width: 1350px) {
@@ -153,14 +154,14 @@ const SubHeading = styled(motion.h2)`
 	}
 
 	@media (max-width: 530px) {
-		font-size: 28px;
+		font-size: 30px;
 	}
 
-	@supports (font-size: clamp(33px, 2.5vw, 48px)) {
-		font-size: clamp(33px, 2.5vw, 48px);
+	@supports (font-size: clamp(33px, 2.5vw, 64px)) {
+		font-size: clamp(33px, 2.5vw, 64px);
 
 		@media (max-width: 1024px) {
-			font-size: clamp(28px, 4.5vw, 38px);
+			font-size: clamp(30px, 4.5vw, 38px);
 		}
 	}
 `
@@ -218,7 +219,7 @@ const AccentSquare = styled.div`
 
 		h2 {
 			color: ${colors('text.primary_lightest')};
-			font-size: clamp(18px, 3vw, 30px);
+			font-size: clamp(24px, 3vw, 30px);
 			margin-bottom: 2rem;
 			text-align: start;
 		}

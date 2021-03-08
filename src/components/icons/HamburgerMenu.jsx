@@ -8,7 +8,7 @@ export const HamburgerMenu = () => (
 	>
 		<path
 			d="M16.25 22.5H25M5 7.5H25H5ZM5 15H25H5Z"
-			stroke="#222222"
+			stroke="#93989B"
 			strokeWidth="3"
 			strokeLinecap="round"
 			strokeLinejoin="round"

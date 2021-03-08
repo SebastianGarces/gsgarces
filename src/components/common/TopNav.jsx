@@ -114,17 +114,17 @@ const Socials = styled.div`
 `
 
 const Links = styled.div`
-	display: flex;
+	display: none;
 	align-items: center;
 	margin-left: auto;
 
 	a {
-		margin-left: 3rem;
+		margin-left: 4rem;
 		text-transform: uppercase;
 	}
 
-	@media (max-width: 1200px) {
-		display: none;
+	@media (min-width: 1200px) {
+		display: flex;
 	}
 `
 
@@ -138,7 +138,7 @@ const MenuIconWrapper = styled.div`
 	margin-left: auto;
 	cursor: pointer;
 
-	@media (min-width: 1201px) {
+	@media (min-width: 1200px) {
 		display: none;
 	}
 `

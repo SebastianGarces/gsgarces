@@ -1,9 +1,9 @@
 const theme = {
 	colors: {
 		main: {
-			primary: '#364AFD',
-			hover: '#031CFC',
-			light: '#CDD2FE',
+			primary: '#041118',
+			hover: '#333E43',
+			light: '#93989B',
 		},
 		bg: {
 			primary: '#F9F9F9',
@@ -11,7 +11,7 @@ const theme = {
 			border: 'rgba(247, 247, 247, 0.4)',
 		},
 		text: {
-			primary: '#222',
+			primary: '#041118',
 			primary_lighter: '#444',
 			primary_lightest: '#666',
 			white: '#F9F9F9',
