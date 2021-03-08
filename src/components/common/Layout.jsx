@@ -4,22 +4,28 @@ import colors from '../../utils/colors'
 
 import { TopNav } from './TopNav'
 import { BottomNav } from './BottomNav'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useRouter } from 'next/router'
 
 export const Layout = ({ children }) => {
+	const router = useRouter()
 	return (
-		<Container>
-			<ContentWrapper>
-				<TopNav />
-				<BottomNav />
-				{children}
-			</ContentWrapper>
-		</Container>
+		<AnimatePresence exitBeforeEnter>
+			<Container key={router.pathname}>
+				<ContentWrapper>
+					<TopNav />
+					<BottomNav />
+					{children}
+				</ContentWrapper>
+			</Container>
+		</AnimatePresence>
 	)
 }
 
-const Container = styled.div`
+const Container = styled(motion.div)`
 	min-height: 100vh;
 	color: ${colors('main.primary')};
+	overflow: hidden;
 
 	display: grid;
 	grid-template-columns: repeat(13, 1fr);
@@ -32,6 +38,7 @@ const Container = styled.div`
 
 const ContentWrapper = styled.main`
 	grid-column: 3/12;
+	overflow: hidden;
 
 	display: grid;
 	grid-template-rows: min-content 1fr;

@@ -10,8 +10,47 @@ export default function HomePage() {
 		router.push('/projects')
 	}
 
+	const scrollAwayLeft = {
+		initial: {
+			x: '0',
+			skewX: 10,
+			scale: 1.25,
+		},
+		animate: {
+			x: '-135vw',
+			skewX: 0,
+			transition: {
+				duration: 0.75,
+			},
+		},
+		exit: {
+			x: '0',
+			skewX: -10,
+			transition: {
+				duration: 0.5,
+			},
+		},
+	}
+
+	const stagger = {
+		animate: {
+			transition: {
+				staggerChildren: 0.04,
+			},
+		},
+		exit: {
+			transition: {
+				staggerChildren: 0.04,
+			},
+		},
+	}
+
 	return (
-		<Container>
+		<Container exit="exit" initial="initial" animate="animate">
+			<motion.div variants={stagger}>
+				<TransitionBgPrimary variants={scrollAwayLeft} />
+				<TransitionBgSecondary variants={scrollAwayLeft} />
+			</motion.div>
 			<ContentWrapper>
 				<Hero>
 					<HeadingWrapper>
@@ -28,11 +67,37 @@ export default function HomePage() {
 	)
 }
 
-const Container = styled.section`
+const TransitionBgPrimary = styled(motion.div)`
+	position: absolute;
+	overflow: hidden;
+	background: #041118;
+	z-index: 2000;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100vh;
+	width: 100vw;
+`
+const TransitionBgSecondary = styled(motion.div)`
+	position: absolute;
+	background: #93989b;
+	overflow: hidden;
+	z-index: 1000;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100vh;
+	width: 100vw;
+`
+
+const Container = styled(motion.section)`
 	height: 100%;
 	width: 100%;
 	display: flex;
 	align-items: center;
+	overflow: hidden;
 
 	@media (max-width: 1024px) {
 		align-content: space-between;
@@ -70,7 +135,7 @@ const Hero = styled.div`
 	}
 `
 
-const HeadingWrapper = styled.div`
+const HeadingWrapper = styled(motion.div)`
 	position: absolute;
 	width: max-content;
 
@@ -86,7 +151,6 @@ const Heading = styled(motion.h1)`
 	font-size: 120px;
 	letter-spacing: -0.085em;
 	text-transform: uppercase;
-	z-index: 5;
 	line-height: 1.25;
 
 	@media (max-width: 1500px) {
@@ -166,7 +230,7 @@ const SubHeading = styled(motion.h2)`
 	}
 `
 
-const AccentSquare = styled.div`
+const AccentSquare = styled(motion.div)`
 	width: 55%;
 	height: 70vh;
 	border-radius: 20px;
