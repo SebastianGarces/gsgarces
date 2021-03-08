@@ -54,13 +54,54 @@ export default function HomePage() {
 			<ContentWrapper>
 				<Hero>
 					<HeadingWrapper>
-						<Heading>Front &nbsp; End &nbsp; Developer</Heading>
-						<SubHeading>G. Sebastian Garces</SubHeading>
+						<LineWrapper>
+							<Heading
+								initial={{ opacity: 0, y: 80 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{
+									delay: 0.45,
+									duration: 0.5,
+									type: 'spring',
+								}}
+							>
+								Front &nbsp; End &nbsp; Developer
+							</Heading>
+						</LineWrapper>
+						<LineWrapper>
+							<SubHeading
+								initial={{ opacity: 0, y: 80 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{
+									delay: 0.5,
+									duration: 0.5,
+									type: 'spring',
+								}}
+							>
+								G. Sebastian Garces
+							</SubHeading>
+						</LineWrapper>
 					</HeadingWrapper>
 				</Hero>
 				<AccentSquare>
-					<h2>Bridging the gap between developers and designers</h2>
-					<button onClick={handleProjects}>Projects</button>
+					<LineWrapper>
+						<motion.h2
+							initial={{ opacity: 0, y: 80 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ delay: 0.55, duration: 0.5, type: 'spring' }}
+						>
+							Bridging the gap between developers and designers
+						</motion.h2>
+					</LineWrapper>
+					<LineWrapper>
+						<motion.button
+							initial={{ opacity: 0, y: 80 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ delay: 0.6, duration: 0.5, type: 'spring' }}
+							onClick={handleProjects}
+						>
+							Projects
+						</motion.button>
+					</LineWrapper>
 				</AccentSquare>
 			</ContentWrapper>
 		</Container>
@@ -79,6 +120,10 @@ const TransitionBgPrimary = styled(motion.div)`
 	height: 100vh;
 	width: 100vw;
 `
+const LineWrapper = styled.div`
+	overflow: hidden;
+`
+
 const TransitionBgSecondary = styled(motion.div)`
 	position: absolute;
 	background: #93989b;
