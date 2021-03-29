@@ -16,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
                 font-family: poppins, sans-serif;
                 font-weight: 700;
                 font-style: normal;
+                color: ${colors('accent.primary')}
             }
             p, a, li, span, button {
                 font-family: poppins, sans-serif;

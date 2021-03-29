@@ -53,7 +53,7 @@ const ContentWrapper = styled.main`
 
 	@media (max-width: 768px) {
 		grid-column: 1/14;
-		padding: 0 15px;
+		padding: 0 28px;
 		grid-template-rows: 90px 1fr 90px;
 		grid-template-areas:
 			'top-nav'

@@ -22,6 +22,6 @@ const ATag = styled.a`
 	${({ isActive }) =>
 		isActive &&
 		css`
-			color: ${colors('main.primary')};
+			color: ${colors('accent.primary')};
 		`};
 `

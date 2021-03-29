@@ -5,8 +5,11 @@ const theme = {
 			hover: '#333E43',
 			light: '#93989B',
 		},
+		accent: {
+			primary: '#00FF85',
+		},
 		bg: {
-			primary: '#F9F9F9',
+			primary: '#041118',
 			dark: '#111111',
 			border: 'rgba(247, 247, 247, 0.4)',
 		},

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { motion } from 'framer-motion'
 import colors from '../utils/colors'
 import { useRouter } from 'next/router'
@@ -6,172 +6,54 @@ import { useRouter } from 'next/router'
 export default function HomePage() {
 	const router = useRouter()
 
-	function handleProjects() {
-		router.push('/projects')
-	}
-
-	const scrollAwayLeft = {
-		initial: {
-			x: '0',
-			skewX: 10,
-			scale: 1.25,
-		},
-		animate: {
-			x: '-135vw',
-			skewX: 0,
-			transition: {
-				duration: 0.75,
-			},
-		},
-		exit: {
-			x: '0',
-			skewX: -10,
-			transition: {
-				duration: 0.5,
-			},
-		},
-	}
-
-	const stagger = {
-		animate: {
-			transition: {
-				staggerChildren: 0.04,
-			},
-		},
-		exit: {
-			transition: {
-				staggerChildren: 0.04,
-			},
-		},
-	}
-
 	return (
 		<Container exit="exit" initial="initial" animate="animate">
-			<motion.div variants={stagger}>
-				<TransitionBgPrimary variants={scrollAwayLeft} />
-				<TransitionBgSecondary variants={scrollAwayLeft} />
-			</motion.div>
-			<ContentWrapper>
-				<Hero>
-					<HeadingWrapper>
-						<LineWrapper>
-							<Heading
-								initial={{ opacity: 0, y: 80 }}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{
-									delay: 0.45,
-									duration: 0.5,
-									type: 'spring',
-								}}
-							>
-								Front &nbsp; End &nbsp; Developer
-							</Heading>
-						</LineWrapper>
-						<LineWrapper>
-							<SubHeading
-								initial={{ opacity: 0, y: 80 }}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{
-									delay: 0.5,
-									duration: 0.5,
-									type: 'spring',
-								}}
-							>
-								G. Sebastian Garces
-							</SubHeading>
-						</LineWrapper>
-					</HeadingWrapper>
-				</Hero>
-				<AccentSquare>
+			<HeroContainer>
+				<HeadingWrapper>
 					<LineWrapper>
-						<motion.h2
-							initial={{ opacity: 0, y: 80 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ delay: 0.55, duration: 0.5, type: 'spring' }}
-						>
-							Bridging the gap between developers and designers
-						</motion.h2>
+						<Heading outlined>Software</Heading>
 					</LineWrapper>
 					<LineWrapper>
-						<motion.button
-							initial={{ opacity: 0, y: 80 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ delay: 0.6, duration: 0.5, type: 'spring' }}
-							onClick={handleProjects}
-						>
-							Projects
-						</motion.button>
+						<Heading>Engineer</Heading>
 					</LineWrapper>
-				</AccentSquare>
-			</ContentWrapper>
+				</HeadingWrapper>
+			</HeroContainer>
+
+			<LineWrapper>
+				<SubHeading>G. Sebastian Garces</SubHeading>
+			</LineWrapper>
 		</Container>
 	)
 }
 
-const TransitionBgPrimary = styled(motion.div)`
-	position: absolute;
-	overflow: hidden;
-	background: #041118;
-	z-index: 2000;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 100vh;
-	width: 100vw;
-`
 const LineWrapper = styled.div`
-	overflow: hidden;
-`
-
-const TransitionBgSecondary = styled(motion.div)`
-	position: absolute;
-	background: #93989b;
-	overflow: hidden;
-	z-index: 1000;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 100vh;
-	width: 100vw;
+	position: relative;
+	width: 100%;
 `
 
 const Container = styled(motion.section)`
 	height: 100%;
 	width: 100%;
 	display: flex;
-	align-items: center;
-	overflow: hidden;
+	flex-direction: column;
+	justify-content: center;
 
 	@media (max-width: 1024px) {
 		align-content: space-between;
 	}
 `
 
-const ContentWrapper = styled.div`
-	height: fit-content;
-	display: flex;
-	width: 100%;
-
-	@media (max-width: 1024px) {
-		flex-direction: column;
-		height: 100%;
-		justify-content: space-between;
-	}
-`
-
-const Hero = styled.div`
+const HeroContainer = styled.div`
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	width: fit-content;
 	padding-top: 3.5vh;
-	width: 45%;
-	height: 70vh;
+	width: 65%;
+	height: 60vh;
 
 	@media (max-width: 1024px) {
-		height: min-content;
+		height: 55vh;
 	}
 
 	@media (max-width: 768px) {
@@ -181,25 +63,24 @@ const Hero = styled.div`
 `
 
 const HeadingWrapper = styled(motion.div)`
-	position: absolute;
-	width: max-content;
+	position: relative;
+	width: 100%;
 
 	@media (max-width: 1024px) {
 		position: static;
-		width: fit-content;
 	}
 `
 
 const Heading = styled(motion.h1)`
-	color: ${colors('text.primary')};
+	color: ${colors('text.white')};
 	font-weight: 800;
 	font-size: 120px;
-	letter-spacing: -0.085em;
-	text-transform: uppercase;
+	letter-spacing: -0.005em;
 	line-height: 1.25;
+	margin-left: 50%;
 
 	@media (max-width: 1500px) {
-		font-size: 98px;
+		font-size: 160px;
 	}
 
 	@media (max-width: 1215px) {
@@ -208,11 +89,10 @@ const Heading = styled(motion.h1)`
 
 	@media (max-width: 1024px) {
 		font-size: 120px;
-		width: 70%;
+		margin-left: 35%;
 	}
 
 	@media (max-width: 768px) {
-		width: 60%;
 		font-size: 120px;
 	}
 
@@ -226,16 +106,35 @@ const Heading = styled(motion.h1)`
 
 	@media (max-width: 440px) {
 		font-size: 54px;
-		width: 60%;
 	}
 
-	@supports (font-size: clamp(54px, 6.5vw, 120px)) {
-		font-size: clamp(54px, 6.5vw, 120px);
+	@supports (font-size: clamp(94px, 10.5vw, 164px)) {
+		font-size: clamp(94px, 10.5vw, 164px);
 
 		@media (max-width: 1024px) {
-			font-size: clamp(54px, 17vw, 100px);
+			font-size: clamp(68px, 13.5vw, 164px);
+		}
+
+		@media (max-width: 768px) {
+			margin-left: 0;
+			text-align: end;
 		}
 	}
+
+	${({ outlined }) =>
+		outlined &&
+		css`
+			margin-left: 0;
+			-webkit-text-stroke: 4px ${colors('text.white')};
+			-webkit-text-fill-color: ${colors('text.primary')};
+
+			@media (max-width: 768px) {
+				text-align: start;
+			}
+			@media (max-width: 1024px) {
+				margin-left: 0;
+			}
+		`}
 `
 
 const SubHeading = styled(motion.h2)`
@@ -244,7 +143,7 @@ const SubHeading = styled(motion.h2)`
 	font-weight: 200;
 	font-size: 64px;
 
-	color: ${colors('text.primary')};
+	color: ${colors('text.white_light')};
 
 	@media (max-width: 1500px) {
 		font-size: 64px;
@@ -271,70 +170,6 @@ const SubHeading = styled(motion.h2)`
 
 		@media (max-width: 1024px) {
 			font-size: clamp(30px, 4.5vw, 38px);
-		}
-	}
-`
-
-const AccentSquare = styled(motion.div)`
-	width: 55%;
-	height: 70vh;
-	border-radius: 20px;
-	padding: 3vw 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: flex-end;
-
-	@media (min-width: 3200px) {
-		padding: 2vw;
-	}
-
-	h2 {
-		color: ${colors('text.primary_lighter')};
-		font-size: clamp(18px, 2vw, 38px);
-		font-weight: 200;
-		margin-bottom: 3rem;
-		text-align: end;
-	}
-
-	button {
-		background-color: ${colors('main.primary')};
-		width: fit-content;
-		padding: 1rem 4rem;
-		border: none;
-		border-radius: 5px;
-
-		transition: background-color 150ms ease-in-out;
-
-		color: ${colors('text.white')};
-		font-size: 20px;
-		font-weight: 600;
-		text-transform: uppercase;
-		cursor: pointer;
-
-		&:hover,
-		&:focus {
-			background-color: ${colors('main.hover')};
-			outline: none;
-		}
-	}
-
-	@media (max-width: 1024px) {
-		background-color: transparent;
-		height: min-content;
-		width: 100%;
-		padding: 0;
-		align-items: flex-start;
-
-		h2 {
-			color: ${colors('text.primary_lightest')};
-			font-size: clamp(24px, 3vw, 30px);
-			margin-bottom: 2rem;
-			text-align: start;
-		}
-
-		button {
-			width: 100%;
 		}
 	}
 `

@@ -102,7 +102,7 @@ const Socials = styled.div`
 		&:focus {
 			svg {
 				path {
-					fill: ${colors('main.primary')};
+					fill: ${colors('accent.primary')};
 				}
 			}
 		}
