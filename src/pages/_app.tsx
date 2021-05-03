@@ -4,8 +4,9 @@ import Head from 'next/head'
 import GlobalStyles from '../styles/GlobalStyles'
 import theme from '../styles/theme'
 import { Layout } from '@components/common'
+import { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<Head>
@@ -21,14 +22,14 @@ function MyApp({ Component, pageProps }) {
 	)
 }
 
-MyApp.getInitialProps = async ({ Component, ctx }) => {
-	let pageProps = {}
+// MyApp.getInitialProps = async ({ Component, ctx }) => {
+// 	let pageProps = {}
 
-	if (Component.getInitialProps) {
-		pageProps = await Component.getInitialProps(ctx)
-	}
+// 	if (Component.getInitialProps) {
+// 		pageProps = await Component.getInitialProps(ctx)
+// 	}
 
-	return { pageProps }
-}
+// 	return { pageProps }
+// }
 
 export default MyApp

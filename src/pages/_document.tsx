@@ -1,8 +1,8 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
-class MyDocument extends Document {
-	static async getInitialProps(ctx) {
+export default class MyDocument extends Document {
+	static async getInitialProps(ctx: DocumentContext) {
 		const sheet = new ServerStyleSheet()
 		const originalRenderPage = ctx.renderPage
 
@@ -31,7 +31,8 @@ class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
-					<link href="/fonts/poppins.css" rel="stylesheet" async />
+					<link href="/fonts/poppins.css" rel="preload" as="style" />
+					<link href="/fonts/poppins.css" rel="stylesheet" />
 					<meta
 						name="Description"
 						content="G. Sebastian Garces - Front End Developer. Bridging the gap between developers and designers."
@@ -63,5 +64,3 @@ class MyDocument extends Document {
 		)
 	}
 }
-
-export default MyDocument

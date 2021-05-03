@@ -1,6 +1,5 @@
-import styled from 'styled-components'
 import { Github, Linkedin, Twitter, Dribbble } from '@components/icons'
-import colors from '../../utils/colors'
+import { Footer, IconWrapper, NavContainer, Socials } from './BottomNav.styles'
 
 export const BottomNav = () => {
 	return (
@@ -44,49 +43,3 @@ export const BottomNav = () => {
 		</Footer>
 	)
 }
-
-const Footer = styled.footer`
-	display: none;
-	grid-area: bot-nav;
-
-	@media (max-width: 768px) {
-		display: flex;
-	}
-`
-
-const NavContainer = styled.div`
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	width: 100%;
-`
-
-const Socials = styled.div`
-	grid-area: nav;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	a {
-		svg {
-			path {
-				transition: fill 150ms ease-in-out;
-			}
-		}
-
-		&:hover,
-		&:focus {
-			svg {
-				path {
-					fill: ${colors('main.primary')};
-				}
-			}
-		}
-	}
-`
-
-const IconWrapper = styled.a`
-	display: flex;
-	align-items: center;
-	margin-left: 2rem;
-`

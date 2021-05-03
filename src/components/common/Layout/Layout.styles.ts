@@ -1,30 +1,9 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
-import colors from '../../utils/colors'
-
-import { TopNav } from './TopNav'
-import { BottomNav } from './BottomNav'
-import { AnimatePresence, motion } from 'framer-motion'
-import { useRouter } from 'next/router'
-
-export const Layout = ({ children }) => {
-	const router = useRouter()
-	return (
-		<AnimatePresence exitBeforeEnter>
-			<Container key={router.pathname}>
-				<ContentWrapper>
-					<TopNav />
-					<BottomNav />
-					{children}
-				</ContentWrapper>
-			</Container>
-		</AnimatePresence>
-	)
-}
-
-const Container = styled(motion.div)`
+export const Container = styled(motion.div)`
 	min-height: 100vh;
-	color: ${colors('main.primary')};
+	color: ${({ theme }) => theme.colors.main.primary};
 	overflow: hidden;
 
 	display: grid;
@@ -36,7 +15,7 @@ const Container = styled(motion.div)`
 	}
 `
 
-const ContentWrapper = styled.main`
+export const ContentWrapper = styled.main`
 	grid-column: 3/12;
 	overflow: hidden;
 
