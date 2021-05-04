@@ -10,7 +10,7 @@ import {
 	TitleContainer,
 	MiniBioContainer,
 	Button,
-} from './index.styles'
+} from '@styles/index.styles'
 
 export default function HomePage() {
 	const router = useRouter()
