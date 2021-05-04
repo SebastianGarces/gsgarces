@@ -21,9 +21,6 @@ declare module 'styled-components' {
 				primary: string
 				primary_lighter: string
 				primary_lightest: string
-				white: string
-				white_light: string
-				diff: string
 			}
 		}
 	}
@@ -45,12 +42,9 @@ const theme: DefaultTheme = {
 			border: 'rgba(247, 247, 247, 0.4)',
 		},
 		text: {
-			primary: '#041118',
-			primary_lighter: '#444',
-			primary_lightest: '#666',
-			white: '#F9F9F9',
-			white_light: '#CCCCCC',
-			diff: '#FFF',
+			primary: '#F9F9F9',
+			primary_lighter: 'hsla(0, 0%, 95%, 1)',
+			primary_lightest: '#B7BFC9',
 		},
 	},
 }
