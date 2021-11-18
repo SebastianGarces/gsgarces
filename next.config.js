@@ -1,7 +1,7 @@
 const securityHeaders = [
 	{
 		key: 'Content-Security-Policy',
-		value: "object-src 'none'; src-script 'self'",
+		value: "object-src 'none' script-src 'self'",
 	},
 ]
 
