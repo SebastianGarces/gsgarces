@@ -1,4 +1,4 @@
-export { Layout } from './Layout/Layout'
-export { BottomNav } from './BottomNav/BottomNav'
-export { NavLink } from './NavLink/NavLink'
-export { TopNav } from './TopNav/TopNav'
+export { Layout } from './Layout'
+export { BottomNav } from './BottomNav'
+export { NavLink } from './NavLink'
+export { TopNav } from './TopNav'

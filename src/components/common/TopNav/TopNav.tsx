@@ -37,8 +37,8 @@ export const TopNav = () => {
 					})}
 				</Socials>
 				<Links>
+					<NavLink href="/">Home</NavLink>
 					<NavLink href="/about">About</NavLink>
-					<NavLink href="/projects">Projects</NavLink>
 					<NavLink href="/keyframes">Keyframes</NavLink>
 					<NavLink href="/contact-me">Contact me</NavLink>
 				</Links>

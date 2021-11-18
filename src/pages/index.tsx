@@ -1,16 +1,13 @@
 import { useRouter } from 'next/router'
 import {
 	Container,
-	Frame,
+	Avatar,
 	HeroContainer,
 	LineTag,
-	MiniBio,
-	SubTitle,
-	Title,
 	TitleContainer,
 	MiniBioContainer,
-	Button,
-} from '@styles/index.styles'
+} from '@styles/pages/index.styles'
+import { Text, Title, SubTitle, Button } from '@styles/styled-components'
 
 export default function HomePage() {
 	const router = useRouter()
@@ -18,26 +15,31 @@ export default function HomePage() {
 	return (
 		<Container>
 			<HeroContainer>
-				<Frame />
+				<Avatar />
 				<TitleContainer>
-					<Title>Gerardo Sebastian Garces</Title>
+					<Title>G. Sebastian Garces</Title>
 					<SubTitle>Software Engineer</SubTitle>
-					<LineTag>I build things for the web.</LineTag>
+					<LineTag>I build things for the web</LineTag>
 				</TitleContainer>
 				<MiniBioContainer>
-					<MiniBio>
+					<Text mwidth="650px">
 						I’m a Cleveland-based software engineer who specializes in
 						building (and occacionally designing) exceptional digital
-						experiences.
-					</MiniBio>
-					<MiniBio>
-						Currently, I’m an engineer at <span>Welcome Connect LLC </span>
-						focused on building next generation real estate software.
-					</MiniBio>
+						experiences
+					</Text>
+					<Text>
+						Currently, I’m an engineer at{' '}
+						<a href="https://www.nexient.com/" target="_blank">
+							Nexient
+						</a>
+					</Text>
 				</MiniBioContainer>
 
-				<Button onClick={() => router.push('mailto:gsgarces1@gmail.com')}>
-					get-in-touch
+				<Button
+					gridArea="button"
+					onClick={() => router.push('mailto:gsgarces1@gmail.com')}
+				>
+					get in touch
 				</Button>
 			</HeroContainer>
 		</Container>

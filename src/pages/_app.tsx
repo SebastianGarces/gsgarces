@@ -6,7 +6,7 @@ import theme from '../styles/theme'
 import { Layout } from '@components/common'
 import { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<Head>
@@ -21,15 +21,3 @@ function MyApp({ Component, pageProps }: AppProps) {
 		</>
 	)
 }
-
-// MyApp.getInitialProps = async ({ Component, ctx }) => {
-// 	let pageProps = {}
-
-// 	if (Component.getInitialProps) {
-// 		pageProps = await Component.getInitialProps(ctx)
-// 	}
-
-// 	return { pageProps }
-// }
-
-export default MyApp
