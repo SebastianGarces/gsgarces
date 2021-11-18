@@ -1,7 +1,9 @@
+const isDev = process.env.NODE_ENV !== 'production'
+
 const securityHeaders = [
 	{
 		key: 'Content-Security-Policy',
-		value: "object-src 'none' script-src 'self'",
+		value: isDev ? 'none' : "object-src 'none'; script-src 'self';",
 	},
 ]
 
