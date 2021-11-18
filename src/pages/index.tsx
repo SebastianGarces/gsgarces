@@ -29,7 +29,7 @@ export default function HomePage() {
 					</Text>
 					<Text>
 						Currently, I’m an engineer at{' '}
-						<a href="https://www.nexient.com/" target="_blank">
+						<a href="https://www.nexient.com/" target="_blank" rel="noreferrer">
 							Nexient
 						</a>
 					</Text>

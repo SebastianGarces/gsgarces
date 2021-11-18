@@ -4,7 +4,7 @@ type SubTitleProps = {
 	variant?: 'primary' | 'secondary'
 }
 
-export const SubTitle = styled.h3`
+export const SubTitle = styled.h2`
 	color: ${({ theme }) => theme.colors.text.primary_lightest};
 
 	font-weight: 400;
