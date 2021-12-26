@@ -62,6 +62,9 @@ export const LineTag = styled.p`
 
 export const MiniBioContainer = styled.div`
 	grid-area: bio;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 
 	@media (max-width: 768px) {
 		margin-top: 16px;

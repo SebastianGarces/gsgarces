@@ -8,11 +8,6 @@ export const Text = styled.p`
 	color: ${({ theme }) => theme.colors.text.primary_lightest};
 	font-size: 18px;
 	line-height: 2;
-	margin-bottom: 2rem;
-
-	&:last-of-type {
-		margin-top: 12px;
-	}
 
 	${({ mwidth }: TextProps) =>
 		css`

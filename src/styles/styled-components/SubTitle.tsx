@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 type SubTitleProps = {
-	variant?: 'primary' | 'secondary'
+	variant?: 'primary' | 'secondary' | 'terciary'
 }
 
 export const SubTitle = styled.h2`
@@ -16,5 +16,13 @@ export const SubTitle = styled.h2`
 		variant === 'secondary' &&
 		css`
 			color: ${({ theme }) => theme.colors.accent.primary};
+		`}
+
+	${({ variant }: SubTitleProps) =>
+		variant === 'terciary' &&
+		css`
+			text-transform: unset;
+			letter-spacing: unset;
+			margin: 0;
 		`}
 `
